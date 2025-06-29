@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu xét nghiệm Nội tiết A4</title>
+    <link rel="stylesheet" href="papercss.css">
+    <link rel="stylesheet" href="./assets/vendors/papercss/papercss.css">
+    <link rel="stylesheet" href="./assets/css/app.css">
+    <style>
+        @page {
+            size: A4;
+        }
+        
+        body {
+            border: none;
+            margin: 0;
+            width: 100%;
+            font-family: 'times new roman';
+            line-height: 1;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        .A4 {
+            width: 210mm;
+            height: 297mm;
+            margin: auto;
+            padding: 10mm;
+        }
+        
+        .sheet {
+            padding: 10mm;
+            box-sizing: border-box;
+            border: none;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        .header,
+        .header1 {
+            border: none;
+            width: 100%;
+            margin-bottom: 5px;
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Times New Roman';
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        td {
+            border: 1px solid #000;
+            padding: 1.5mm;
+            text-align: left;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        .col-index {
+            width: 25%;
+            /* Cột 'Chỉ số' rộng hơn để chứa nội dung dài */
+        }
+        
+        .col-result {
+            width: 25%;
+            text-align: center;
+        }
+        
+        th {
+            border: 1px solid #000;
+            border-spacing: 0;
+        }
+        
+        .header th:nth-child(2) {
+            text-align: center;
+            line-height: 1.;
+            border-collapse: collapse;
+        }
+        
+        .header th:nth-child(3) {
+            text-align: center;
+            margin-right: 200px;
+            border-collapse: collapse;
+        }
+        
+        .center {
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        .checkbox {
+            font-family: 'Times New Roman';
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        .signature {
+            width: 100%;
+            justify-content: space-between;
+            margin-top: -5mm;
+            font-weight: bold;
+        }
+        
+        .signature div {
+            width: 100%;
+        }
+        
+        .text-input {
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Times New Roman';
+            /* Căn giữa nội dung nhập vào */
+        }
+        
+        textarea.text-input {
+            resize: none;
+            /* Ngăn thay đổi kích thước */
+            white-space: pre-wrap;
+            /* Tự động xuống dòng */
+            overflow: hidden;
+            /* Ẩn thanh cuộn */
+            height: 40px;
+            /* Chiều cao giống input */
+            line-height: 2;
+            /* Căn chỉnh dòng */
+        }
+    </style>
+</head>
+
+<body class="A4">
+    <section class="sheet">
+        <table style=" font-size: 16px; border-spacing: 0;border-collapse: collapse; " class="header">
+            <thead>
+                <tr class="header">
+                    <th class="header" style="width: 30%;margin-left: -20px;font-weight: normal;">SỞ Y TẾ CẦN THƠ <br>
+                        <b>TRUNG TÂM PHÁP Y</b></th>
+                    <th class="header" style="width: 40%; vertical-align: center;">PHIẾU XÉT NGHIỆM NỘI TIẾT</th>
+                    <th class="header" style="width: 30%;vertical-align: top;">MS: 35/BV<br>Số: <input type="text" class="text-input" style="border: 1px;"></th>
+                </tr>
+            </thead>
+        </table>
+        <table class="header1">
+            <tr class="header1">
+                <td class="header1" style="width: 20%;"> </td>
+                <td class="header1" style="width: 30%; ">
+                    <strong>Thường</strong> <input type="checkbox" class="checkbox">
+                </td>
+                <td class="header1" style=" width: 30%; ">
+                    <strong>Cấp cứu</strong> <input type="checkbox" class="checkbox"></td>
+                <td class="header1" style="width: 20%;"> </td>
+            </tr>
+        </table>
+        <table>
+            <!-- Patient Information -->
+            <tr>
+                <td colspan=" 4 " class="1" style="width: 00%; padding: 0px; border: none; ">
+                    <div class="checkbox-section " style="width: 100%;">
+                        <strong>Họ và tên:</strong> <input type="text" style="width: 300px;font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px; ">
+                        <strong>Tuổi:</strong> <input type="number" style="width: 50px;font-family: 'Times New Roman'; border: 1px;  " class="text-input " style="width: 20%; ">
+                        <span class="checkbox-section "><strong>Giới tính:</strong> Nam <input type="checkbox" class="checkbox"> Nữ <input type="checkbox" class="checkbox"></span><br>
+                        <strong>Địa chỉ:</strong> <input type="text" style="width: 55%;font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px ; ">
+                        <strong>Số thẻ BHYT:</strong> <input type="number" style="width: 20%;font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px; " class="text-input "><br>
+                        <strong>Khoa:</strong> <input type="text" style="width: 40%; border: 1px; font-family: 'Times New Roman'; ">
+                        <strong>Buồng:</strong> <input type="text " style="width: 15%;font-family: 'Times New Roman'; border: 1px;  ">
+                        <strong>Giường:</strong> <input type="text " style="width: 20%;font-family: 'Times New Roman'; border: 1px;  "><br>
+                        <strong>Chẩn đoán:</strong> <input type="text " style="width: 85%;font-family: 'Times New Roman'; border: 1px;  ">
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+
+        <table style="width: 100%; border-collapse: collapse; ">
+
+            <tr>
+                <th class="col-index" style=" padding: 10px;">XÉT NGHIỆM</th>
+                <th class="col-result">CHU KỲ</th>
+                <th class="col-index">BÌNH THƯỜNG</th>
+                <th class="col-result">KẾT QUẢ</th>
+            </tr>
+            <tr>
+                <td class="col-index" style="text-align: center; ">
+                    <strong>FSH</strong>
+                </td>
+                <td class="col-result" style="text-align: left;">Early follicular
+                    <br> Ovulatory peak <br> Luteal phase
+                    <br> Post menopause</td>
+                <td class="col-index">02 - 10 ml IU / ml <br> 10 - 23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br> 1,5 - 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>30 - 140 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</td>
+                <td class="col-result"><textarea type="text" style="border: 1px;width: 100%; font-family: 'Times New Roman';"></textarea></td>
+            </tr>
+            <tr>
+                <td class="col-index" style="text-align: center; ">
+                    <strong>LH</strong>
+                </td>
+                <td class="col-result" style="text-align: left;">Early follicular
+                    <br> Ovulatory peak <br> Luteal phase
+                    <br> Post menopause</td>
+                <td class="col-index">15 - 20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-<br> 17 - 80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br> 2 - 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-<br>30 - 140 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</td>
+                <td class="col-result"><textarea type="text" style="border: 1px;width: 100%; font-family: 'Times New Roman';"></textarea></td>
+            </tr>
+            <tr>
+                <td class="col-index" style="text-align: center; ">
+                    <strong>PRL</strong>
+                    <p>(Prolactin)</p>
+                </td>
+                <td class="col-result" style="text-align: left;">Cycling
+                    <br> Menopause</td>
+                <td class="col-index">02 - 30 ng / ml <br> 02 - 30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -</td>
+                <td class="col-result"><textarea type="text" style="border: 1px;width: 100%; font-family: 'Times New Roman';"></textarea></td>
+            </tr>
+            <tr>
+                <td class="col-index" style="text-align: center; ">
+                    <strong>PRG</strong>
+                    <p>(Progesterone)</p>
+                </td>
+                <td class="col-result" style="text-align: left;">Day 1 st - 14 th
+                    <br> Day 15 th - End</td>
+                <td class="col-index">0,2 - 1,2 ng / ml <br> 2,5 - 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -</td>
+                <td class="col-result"><textarea type="text" style="border: 1px;width: 100%; font-family: 'Times New Roman';"></textarea></td>
+            </tr>
+            <tr>
+                <td class="col-index" style="text-align: center; ">
+                    <strong>E2</strong>
+                    <p>(Estradiol)</p>
+                </td>
+                <td class="col-result" style="text-align: left;">Follicular
+                    <br> Ovulatory peak <br> Luteal phase
+                    <br> Post menopause</td>
+                <td class="col-index">10 - 175 pg / ml <br> 125 - 500&nbsp;&nbsp;&nbsp; -<br> 60 - 300&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>
+                    < 50 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</td>
+                        <td class="col-result"><textarea type="text" style="border: 1px;width: 100%; font-family: 'Times New Roman';"></textarea></td>
+            </tr>
+            <tr>
+                <td class="col-index" style="text-align: center; ">
+                    <strong>Testosterone</strong>
+                </td>
+                <td class="col-result" style="text-align: left;">Men
+                    <br> Women</td>
+                <td class="col-index">1,5 - 6,6 ng / ml <br> 0,0 - 0,6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -</td>
+                <td class="col-result"><textarea type="text" style="border: 1px;width: 100%; font-family: 'Times New Roman'; text-align: center;"></textarea></td>
+            </tr>
+            <!-- Section 2: Coagulation -->
+
+        </table>
+        <table style="width: 100%; padding-top: 10px; border-spacing: 0; ">
+
+            <tr>
+                <th style="border: none;">
+                    <input type="text " class="text-input " style="width: 15px; border: 1px; align: center; ">giờ<input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">phút, ngày <input type="text " class="text-input "
+                        style="width: 20px; border: 1px;  align: center;"> tháng <input type="text " class="text-input " style="width: 20px; border: 1px;align: center;  "> năm <input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">
+                </th>
+                <th style="border: none;">
+                    <input type="text " class="text-input " style="width: 15px; border: 1px; align: center; ">giờ<input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">phút, ngày <input type="text " class="text-input "
+                        style="width: 20px; border: 1px;  align: center;"> tháng <input type="text " class="text-input " style="width: 20px; border: 1px;align: center;  "> năm <input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">
+                </th>
+            </tr>
+        </table>
+        <table class="signature " style="width: 100%; padding-top: 15px; border-spacing: 0; ">
+            <tr>
+                <th style="border: none; align=center;padding-top: 15px; ">
+                    <strong>NGƯỜI LẤY MẪU</strong><br><br><br><br><br><br><br><br> Họ tên: <input type="text " class="text-input " style="border: 1px; ">
+                </th>
+                <th style="border: none; align=center; padding-top: 15px;">
+                    <strong>TRƯỞNG KHOA XÉT NGHIỆM</strong><br><br><br><br><br><br><br><br> Họ tên: <input type="text " class="text-input " style="border: 1px;">
+                </th>
+            </tr>
+        </table>
+        <!-- Additional sections can be added here -->
+
+    </section>
+
+</body>
+
+</html>

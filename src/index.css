@@ -1,0 +1,24 @@
+<style>.checkbox-group {
+    display: flex;
+    gap: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    margin: 0;
+    /* Bỏ margin mặc định */
+}
+
+body {
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 414px;
+}
+
+</style>
