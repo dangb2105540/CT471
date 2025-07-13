@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu Xét Nghiệm Huyết Học A4</title>
+
+    <link rel="stylesheet" href="./assets/vendors/papercss/papercss.css">
+
+    <style>
+        body {
+            border: none;
+            margin: 0;
+            width: 100%;
+            font-family: 'times new roman';
+            line-height: 1;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        .A4 {
+            width: 210mm;
+            height: 297mm;
+            margin: auto;
+            padding: 10mm;
+        }
+        
+        .sheet {
+            padding: 10mm;
+            box-sizing: border-box;
+            border: none;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        .header,
+        .header1 {
+            border: none;
+            width: 100%;
+            margin-bottom: 5px;
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Times New Roman';
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        td {
+            border: 1px solid #000;
+            padding: 1.5mm;
+            text-align: left;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        .col-index {
+            width: 30%;
+            /* Cột 'Chỉ số' rộng hơn để chứa nội dung dài */
+        }
+        
+        .col-result {
+            width: 10%;
+            text-align: center;
+        }
+        
+        th {
+            border: 1px solid #000;
+            border-spacing: 0;
+        }
+        
+        .header th:nth-child(2) {
+            text-align: center;
+            line-height: 1.;
+            border-collapse: collapse;
+        }
+        
+        .header th:nth-child(3) {
+            text-align: center;
+            margin-right: 200px;
+            border-collapse: collapse;
+        }
+        
+        .center {
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        .checkbox {
+            font-family: 'Times New Roman';
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        .signature {
+            width: 100%;
+            justify-content: space-between;
+            margin-top: -5mm;
+            font-weight: bold;
+        }
+        
+        .signature div {
+            width: 100%;
+        }
+        
+        .text-input {
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Times New Roman';
+            /* Căn giữa nội dung nhập vào */
+        }
+        
+        textarea.text-input {
+            resize: none;
+            /* Ngăn thay đổi kích thước */
+            white-space: pre-wrap;
+            /* Tự động xuống dòng */
+            overflow: hidden;
+            /* Ẩn thanh cuộn */
+            height: 40px;
+            /* Chiều cao giống input */
+            line-height: 2;
+            /* Căn chỉnh dòng */
+        }
+    </style>
+</head>
+
+<body class="A4">
+    <section class="sheet">
+        <table style=" font-size: 16px; border-spacing: 0;border-collapse: collapse; " class="header">
+            <thead>
+                <tr class="header">
+                    <th class="header" style="width: 40%;margin-left: -20px;">Sở Y tế Cần Thơ <br>
+                        <textarea type="text" style="border: 1px;width: 100%;text-align: center;font-family: 'Times New Roman';font-weight: bold;font-size: 16px;"></textarea></th>
+                    </th>
+                    <th class="header" style="width: 25%; vertical-align: top;">PHIẾU XÉT NGHIỆM<br>HUYẾT HỌC</th>
+                    <th class="header" style="width: 35%;vertical-align: top;">MS: 28/BV-01<br>Số: <input type="text" class="text-input" style="border: 1px;"></th>
+                </tr>
+            </thead>
+        </table>
+        <table class="header1">
+            <tr class="header1">
+                <td class="header1" style="width: 20%;"> </td>
+                <td class="header1" style="width: 30%; ">
+                    <strong>Thường</strong> <input type="checkbox" class="checkbox">
+                </td>
+                <td class="header1" style=" width: 30%; ">
+                    <strong>Cấp cứu</strong> <input type="checkbox" class="checkbox"></td>
+                <td class="header1" style="width: 20%;"> </td>
+            </tr>
+        </table>
+        <table>
+            <!-- Patient Information -->
+            <tr>
+                <td colspan=" 4 " class="1" style="width: 00%; padding: 0px; border: none; ">
+                    <div class="checkbox-section " style="width: 100%;">
+                        <strong>Họ và tên:</strong> <input type="text" style="width: 300px;font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px; ">
+                        <strong>Tuổi:</strong> <input type="number" style="width: 50px;font-family: 'Times New Roman'; border: 1px;  " class="text-input " style="width: 20%; ">
+                        <span class="checkbox-section "><strong>Giới tính:</strong> Nam <input type="checkbox" class="checkbox"> Nữ <input type="checkbox" class="checkbox"></span><br>
+                        <strong>Địa chỉ:</strong> <input type="text" style="width: 55%;font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px ; ">
+                        <strong>Số thẻ BHYT:</strong> <input type="number" style="width: 20%;font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px; " class="text-input "><br>
+                        <strong>Khoa:</strong> <input type="text" style="width: 40%; border: 1px; font-family: 'Times New Roman'; ">
+                        <strong>Buồng:</strong> <input type="text " style="width: 15%;font-family: 'Times New Roman'; border: 1px;  ">
+                        <strong>Giường:</strong> <input type="text " style="width: 20%;font-family: 'Times New Roman'; border: 1px;  "><br>
+                        <strong>Chẩn đoán:</strong> <input type="text " style="width: 85%;font-family: 'Times New Roman'; border: 1px;  ">
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+        <table style="width: 100%; border-collapse: collapse; ">
+            <tr>
+                <th colspan="4" style=" font-size: 16px; border-spacing: 0;border-collapse: collapse; padding: 5px; text-align: left;" class="header">1. Tế bào ngoại vi:</th>
+            </tr>
+            <tr>
+                <th class="col-index" style=" padding: 10px;">Chỉ số</th>
+                <th class="col-result">Kết quả</th>
+                <th class="col-index">Chỉ số</th>
+                <th class="col-result">Kết quả</th>
+            </tr>
+            <tr>
+                <td class="col-index">Số lượng hồng cầu: <br> Nam (4.0-5.8 x 10¹²/l) <br> Nữ (3.9-5.4 x 10¹²/l)</td>
+                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-index">Số lượng bạch cầu (4-10 x 10⁹/l)</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <tr>
+                <td class="col-index">Huyết sắc tố: <br> Nam (140-160 g/l) <br> Nữ (125-145 g/l)</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-index">Thành phần bạch cầu (%)</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <tr>
+                <td class="col-index">Hematocrit: <br> Nam (0.38-0.50 l/l) <br> Nữ (0.35-0.47 l/l)</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-index">- Đoạn trung tính</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <tr>
+                <td class="col-index">MCV</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-index">- Đoạn ưa axit</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <tr>
+                <td class="col-index">MCH</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-index">- Đoạn ưa bazơ</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <tr>
+                <td class="col-index">MCHC</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-index">- Mono</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <tr>
+                <td class="col-index">Hồng cầu có nhân (0 x 10⁹/l)</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-index">- Lympho</td>
+                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <tr>
+                <td class="col-index">Hồng cầu lưới (0.1-0.5%)</td>
+                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-index">- Tế bào bất thường</td>
+                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <tr>
+                <td class="col-index">Số lượng tiểu cầu (150-400 x 10⁹/l)</td>
+                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="col-index">Tốc độ máu lắng: <br> Giờ 1 (
+                    <15 mm) <br>
+                        <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <tr>
+                <td class="col-index">KSV sốt rét:</td>
+                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+                <td>Giờ 2 (
+                    <20 mm)</td>
+                </td>
+                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+            </tr>
+            <!-- Section 2: Coagulation -->
+
+        </table>
+
+        <table style="width: 100%; border-collapse: collapse; ">
+            <tr>
+                <th colspan="4" style=" font-size: 16px; border-spacing: 0;border-collapse: collapse; padding: 8px;text-align: left;" class="header">2. Đông máu:</th>
+            </tr>
+        </table>
+        <table style="width: 100%; border-collapse: collapse; "></table>
+        <tr>
+            <th>Thời gian máu chảy</th>
+            <td class="data-table"><input type="text " class="text-input " style="width: 40px;border: 1px; padding: 5px;"> Phút
+                <br></td>
+        </tr>
+        <tr>
+            <th>Thời gian máu đông</th>
+            <td class="data-table"><input type="text " class="text-input " style="width: 40px;border: 1px;padding: 5px; "> Phút</td>
+        </tr>
+        </table>
+        <!-- Section 3: Blood Group -->
+        <table style="width: 100%; border-collapse: collapse; ">
+            <tr>
+                <th colspan="4" style=" font-size: 16px; border-spacing: 0;border-collapse: collapse; padding: 8px;text-align: left;" class="header">3. Nhóm máu:</th>
+            </tr>
+
+
+        </table>
+        <table style="width: 100%; border-collapse: collapse; "></table>
+        <tr>
+            <th>Hệ ABO</th>
+            <td class="data-table"><input type="text " class="text-input " style="width: 130px;border: 1px; padding: 5px;">
+                <br></td>
+        </tr>
+        <tr>
+            <th>Hệ Rh</th>
+            <td class="data-table"><input type="text " class="text-input " style="width: 140px;border: 1px;padding: 5px; "> </td>
+        </tr>
+        </table>
+        <table style="width: 100%; padding-top: 0px; border-spacing: 0; ">
+
+            <tr>
+                <th style="border: none;">
+                    <input type="text " class="text-input " style="width: 15px; border: 1px; align: center; ">giờ<input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">phút, ngày <input type="text " class="text-input "
+                        style="width: 20px; border: 1px;  align: center;"> tháng <input type="text " class="text-input " style="width: 20px; border: 1px;align: center;  "> năm <input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">
+                </th>
+                <th style="border: none;">
+                    <input type="text " class="text-input " style="width: 15px; border: 1px; align: center; ">giờ<input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">phút, ngày <input type="text " class="text-input "
+                        style="width: 20px; border: 1px;  align: center;"> tháng <input type="text " class="text-input " style="width: 20px; border: 1px;align: center;  "> năm <input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">
+                </th>
+            </tr>
+        </table>
+        <table class="signature " style="width: 100%; padding-top: 15px; border-spacing: 0; ">
+            <tr>
+                <th style="border: none; align=center;padding-top: 15px; ">
+                    <strong>NGƯỜI LẤY MẪU</strong><br><br><br><br><br><br><br><br> Họ tên: <input type="text " class="text-input " style="border: 1px; ">
+                </th>
+                <th style="border: none; align=center; padding-top: 15px;">
+                    <strong>TRƯỞNG KHOA XÉT NGHIỆM</strong><br><br><br><br><br><br><br><br> Họ tên: <input type="text " class="text-input " style="border: 1px;">
+                </th>
+            </tr>
+        </table>
+        <p style="text-align: left; font-size: 13px; ">
+            <strong style="text-align: left;">Hướng dẫn</strong> <br>Quy ước quốc tế: Số lượng hồng cầu, bạch cầu... được tính trong đơn vị lít (l).<br>- Vì: 1.000.000.000 = 10<sup>9</sup>= G (Giga); 1.000.000.000.000 = 10<sup>12</sup>= T (Tera).<br>-
+            Số lượng hồng cầu trước đây tínhtrong 1ml. Ví dụ là 4 triệu: Nay quy ra trong 1 lít là 4 triệu triệu/l hay 4x10<sup>12</sup>/l hay4T/l.
+        </p>
+    </section>
+
+    <button id="scan-camera">Quét QR từ Camera</button> <button id="stop-camera">Tắt Camera</button>
+    <div id="qr-reader-camera" style="width: 300px;"></div>
+    <p id="qr-status">Nhấn nút để bắt đầu quét QR.</p>
+
+    <h3>Chọn ảnh chứa mã QR</h3>
+    <input type="file" id="qr-file-input" accept="image/*">
+    <button id="scan-file">Quét từ ảnh</button>
+    <div id="qr-reader-temp" style="display: none;"></div>
+    <p id="qr-raw-result" style="color: rgb(0, 255, 13); font-weight: bold;"></p>
+
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script>
+        // Log để kiểm tra mã JavaScript được tải
+        console.log("Mã JavaScript đã tải");
+
+        // Sanitize input to prevent XSS
+        function sanitizeInput(input) {
+            const div = document.createElement('div');
+            div.textContent = input;
+            return div.innerHTML;
+        }
+
+        // Parse QR data
+        function parseQRData(raw) {
+            if (!raw || typeof raw !== 'string') {
+                console.error("Dữ liệu QR không hợp lệ");
+                return {};
+            }
+
+            const parts = raw.split("|");
+            if (parts.length < 5) {
+                console.error("Dữ liệu QR không đầy đủ");
+                return {};
+            }
+
+            const dob = parts[3] || "";
+            let age = "";
+            if (dob.length === 8 && /^\d{8}$/.test(dob)) {
+                try {
+                    const birthYear = parseInt(dob.slice(4));
+                    const birthMonth = parseInt(dob.slice(2, 4));
+                    const birthDay = parseInt(dob.slice(0, 2));
+                    const today = new Date();
+                    age = today.getFullYear() - birthYear -
+                        ((today.getMonth() + 1 < birthMonth ||
+                            (today.getMonth() + 1 === birthMonth && today.getDate() < birthDay)) ? 1 : 0);
+                } catch (e) {
+                    console.error("Lỗi khi phân tích ngày sinh:", e);
+                }
+            }
+
+            return {
+                cccd: sanitizeInput(parts[0] || ""),
+                id: sanitizeInput(parts[1] || ""),
+                name: sanitizeInput(parts[2] || ""),
+                age: age,
+                gender: sanitizeInput((parts[4] || "").toLowerCase()),
+                address: sanitizeInput(parts[5] || ""),
+                issued_date: sanitizeInput(parts[6] || "")
+            };
+        }
+
+        // Auto-fill form with QR data
+        function autoFillForm(data) {
+            document.querySelectorAll('strong').forEach(label => {
+                if (label.textContent.includes("Họ và tên")) {
+                    const input = label.nextElementSibling;
+                    if (input) input.value = data.name || "";
+                }
+                if (label.textContent.includes("Tuổi")) {
+                    const input = label.nextElementSibling;
+                    if (input) input.value = data.age || "";
+                }
+                if (label.textContent.includes("Địa chỉ")) {
+                    const input = label.nextElementSibling;
+                    if (input) input.value = data.address || "";
+                }
+
+            });
+
+            document.querySelectorAll('input[type="checkbox"]').forEach(input => {
+                const labelText = input.previousSibling ? input.previousSibling.textContent.trim() : "";
+                if (labelText.includes("Nam")) input.checked = data.gender === "nam";
+                if (labelText.includes("Nữ")) input.checked = data.gender === "nữ";
+            });
+
+            const statusElement = document.getElementById("qr-status");
+            if (statusElement) {
+                statusElement.innerText = "Quét QR thành công!";
+                statusElement.style.color = "green";
+            }
+        }
+
+        // Scan QR code from file
+        function scanQRCodeFromFile() {
+            const fileInput = document.getElementById("qr-file-input");
+            if (!fileInput || fileInput.files.length === 0) {
+                alert("Vui lòng chọn ảnh chứa mã QR!");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const qrScanner = new Html5Qrcode("qr-reader-temp");
+
+            qrScanner.scanFile(file, true)
+                .then(decodedText => {
+                    console.log("Đã quét được từ ảnh:", decodedText);
+                    const resultElement = document.getElementById("qr-raw-result");
+                    if (resultElement) {
+                        resultElement.innerText = "Dữ liệu QR: " + decodedText;
+                    }
+                    const data = parseQRData(decodedText);
+                    autoFillForm(data);
+                    qrScanner.clear();
+                })
+                .catch(err => {
+                    console.error("Không đọc được mã QR từ ảnh:", err);
+                    alert("Không đọc được mã QR từ ảnh, kiểm tra lại!");
+                });
+        }
+
+        // Scan QR code from camera (use default camera)
+        function startCameraScan() {
+            const qrScanner = new Html5Qrcode("qr-reader-camera");
+            const statusElement = document.getElementById("qr-status");
+
+            if (statusElement) {
+                statusElement.innerText = "Đang khởi động camera...";
+                statusElement.style.color = "blue";
+            }
+
+            Html5Qrcode.getCameras().then(devices => {
+                if (devices && devices.length) {
+                    const cameraId = devices[0].id; // Use the first available camera
+
+                    qrScanner.start(
+                        cameraId, {
+                            fps: 20,
+                            qrbox: {
+                                width: 250,
+                                height: 250
+                            },
+                            aspectRatio: 1.0,
+                            disableFlip: false
+                        },
+                        (decodedText) => {
+                            console.log("Đã quét từ camera:", decodedText);
+                            const resultElement = document.getElementById("qr-raw-result");
+                            if (resultElement) {
+                                resultElement.innerText = "Dữ liệu QR: " + decodedText;
+                            }
+                            const data = parseQRData(decodedText);
+                            autoFillForm(data);
+                            qrScanner.stop().then(() => {
+                                if (statusElement) {
+                                    statusElement.innerText = "Đã dừng quét.";
+                                    statusElement.style.color = "black";
+                                }
+                            });
+                        },
+                        (error) => {
+                            console.log("Đang tìm mã QR...");
+                        }
+                    ).catch(err => {
+                        console.error("Lỗi khi khởi động camera:", err);
+                        if (statusElement) {
+                            statusElement.innerText = "Lỗi: Không thể truy cập camera. Vui lòng kiểm tra quyền truy cập.";
+                            statusElement.style.color = "red";
+                        }
+                    });
+                } else {
+                    if (statusElement) {
+                        statusElement.innerText = "Lỗi: Không tìm thấy camera.";
+                        statusElement.style.color = "red";
+                    }
+                }
+            }).catch(err => {
+                console.error("Lỗi khi liệt kê camera:", err);
+                if (statusElement) {
+                    statusElement.innerText = "Lỗi: Không thể liệt kê camera. Vui lòng kiểm tra thiết bị.";
+                    statusElement.style.color = "red";
+                }
+            });
+        }
+
+        function stopCameraScan() {
+            const statusElement = document.getElementById("qr-status");
+            if (qrScanner) {
+                qrScanner.stop().then(() => {
+                    if (statusElement) {
+                        statusElement.innerText = "Camera đã được tắt.";
+                        statusElement.style.color = "black";
+                    }
+                    qrScanner.clear();
+                    qrScanner = null;
+                }).catch(err => {
+                    console.error("Lỗi khi dừng camera:", err);
+                    if (statusElement) {
+                        statusElement.innerText = "Lỗi: Không thể dừng camera.";
+                        statusElement.style.color = "red";
+                    }
+                });
+            } else {
+                if (statusElement) {
+                    statusElement.innerText = "Camera chưa được khởi động.";
+                    statusElement.style.color = "black";
+                }
+            }
+        }
+        // Add event listeners after DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("DOMContentLoaded triggered");
+            const cameraBtn = document.getElementById('scan-camera');
+            const scanFileBtn = document.getElementById('scan-file');
+
+            if (cameraBtn) {
+                cameraBtn.addEventListener('click', startCameraScan);
+            } else {
+                console.error("Không tìm thấy nút scan-camera");
+            }
+            if (scanFileBtn) {
+                scanFileBtn.addEventListener('click', scanQRCodeFromFile);
+            } else {
+                console.error("Không tìm thấy nút scan-file");
+            }
+        });
+    </script>
+</body>
+
+</html>

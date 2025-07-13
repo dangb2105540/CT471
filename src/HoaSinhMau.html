@@ -5,233 +5,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phiếu Xét Nghiệm Hóa Sinh Máu</title>
-    <link rel="stylesheet" href="papercss.css">
     <link rel="stylesheet" href="./assets/vendors/papercss/papercss.css">
-    <link rel="stylesheet" href="./assets/css/app.css">
-    <style>
-        body {
-            border: none;
-            margin: 0;
-            width: 100%;
-            font-family: 'times new roman';
-            line-height: 1;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        
-        .A4 {
-            width: 210mm;
-            height: 297mm;
-            margin: auto;
-            padding: 10mm;
-        }
-        
-        .sheet {
-            padding: 10mm;
-            box-sizing: border-box;
-            border: none;
-            border-collapse: collapse;
-            text-align: center;
-        }
-        
-        .header,
-        .header1 {
-            border: none;
-            width: 100%;
-            margin-bottom: 5px;
-            font-size: 16px;
-            text-align: center;
-            font-family: 'Times New Roman';
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        
-        td {
-            border: 1px solid #000;
-            padding: 1.5mm;
-            text-align: left;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        
-        .col-index {
-            width: 30%;
-            /* Cột 'Chỉ số' rộng hơn để chứa nội dung dài */
-        }
-        
-        .col-result {
-            width: 0%;
-            text-align: center;
-        }
-        
-        th {
-            border: 1px solid #000;
-            border-spacing: 0;
-        }
-        
-        .header th:nth-child(2) {
-            text-align: center;
-            line-height: 1.;
-            border-collapse: collapse;
-        }
-        
-        .header th:nth-child(3) {
-            text-align: center;
-            margin-right: 200px;
-            border-collapse: collapse;
-        }
-        
-        .center {
-            text-align: center;
-            border-collapse: collapse;
-        }
-        
-        .checkbox {
-            font-family: 'Times New Roman';
-            border-collapse: collapse;
-            text-align: center;
-        }
-        
-        .footer {
-            text-align: center;
-            border-collapse: collapse;
-        }
-        
-        .signature {
-            width: 100%;
-            justify-content: space-between;
-            margin-top: -5mm;
-            font-weight: bold;
-        }
-        
-        .signature div {
-            width: 100%;
-        }
-        
-        .text-input {
-            font-weight: bold;
-            text-align: center;
-            font-family: 'Times New Roman';
-            /* Căn giữa nội dung nhập vào */
-        }
-        
-        textarea.text-input {
-            resize: none;
-            /* Ngăn thay đổi kích thước */
-            white-space: pre-wrap;
-            /* Tự động xuống dòng */
-            overflow: hidden;
-            /* Ẩn thanh cuộn */
-            height: 40px;
-            /* Chiều cao giống input */
-            line-height: 2;
-            /* Căn chỉnh dòng */
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Liên kết file CSS -->
 </head>
 
 <body class="A4">
     <section class="sheet">
-        <table style=" font-size: 16px; border-spacing: 0;border-collapse: collapse; " class="header">
+        <table style="font-size: 16px; border-spacing: 0; border-collapse: collapse;" class="header">
             <thead>
                 <tr class="header">
-                    <th class="header" style="width: 40%;margin-left: -20px;">Sở Y tế Cần Thơ <br>
-                        <textarea type="text" style="border: 1px;width: 100%;text-align: center;font-family: 'Times New Roman';font-weight: bold;font-size: 16px;"></textarea></th>
+                    <th class="header" style="width: 40%; margin-left: -20px;">
+                        Sở Y tế Cần Thơ <br>
+                        <input type="text" class="text-input header-textarea" style="border: 1px; width: 85%; text-align: center; border-bottom: 1px dotted #000000; font-family: 'Times New Roman'; font-weight: bold; font-size: 16px;">
+                        <button class="mic-btn" data-target="header-textarea">🎤</button>
                     </th>
-                    <th class="header" style="width: 25%; vertical-align: top;">PHIẾU XÉT NGHIỆM<br>HUYẾT HỌC</th>
-                    <th class="header" style="width: 35%;vertical-align: top;">MS: 34/BV-99<br>Số: <input type="text" class="text-input" style="border: 1px;"></th>
+                    <th class="header" style="width: 25%; vertical-align: top;">PHIẾU XÉT NGHIỆM<br>HÓA SINH MÁU</th>
+                    <th class="header" style="width: 35%; vertical-align: top;">
+                        MS: 34/BV-99<br>Số: <input type="text" class="text-input header-number" style="border: 1px; width: 65%; border-bottom: 1px dotted #000000;">
+                        <button class="mic-btn" data-target="header-number">🎤</button>
+                    </th>
                 </tr>
             </thead>
         </table>
         <table class="header1">
             <tr class="header1">
-                <td class="header1" style="width: 20%;"> </td>
-                <td class="header1" style="width: 30%; ">
-                    <strong>Thường</strong> <input type="checkbox" class="checkbox">
-                </td>
-                <td class="header1" style=" width: 30%; ">
-                    <strong>Cấp cứu</strong> <input type="checkbox" class="checkbox"></td>
-                <td class="header1" style="width: 20%;"> </td>
+                <td class="header1" style="width: 20%;"></td>
+                <td class="header1" style="width: 30%;"><strong>Thường</strong> <input type="checkbox" class="checkbox"></td>
+                <td class="header1" style="width: 30%;"><strong>Cấp cứu</strong> <input type="checkbox" class="checkbox"></td>
+                <td class="header1" style="width: 20%;"></td>
             </tr>
         </table>
         <table>
-            <!-- Patient Information -->
             <tr>
-                <td colspan=" 4 " class="1" style="width: 00%; padding: 0px; border: none; ">
-                    <div class="checkbox-section " style="width: 100%;">
-                        <strong>Họ và tên:</strong> <input type="text" style="width: 300px;font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px; ">
-                        <strong>Tuổi:</strong> <input type="number" style="width: 50px;font-family: 'Times New Roman'; border: 1px;  " class="text-input " style="width: 20%; ">
-                        <span class="checkbox-section "><strong>Giới tính:</strong> Nam <input type="checkbox" class="checkbox"> Nữ <input type="checkbox" class="checkbox"></span><br>
-                        <strong>Địa chỉ:</strong> <input type="text" style="width: 55%;font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px ; ">
-                        <strong>Số thẻ BHYT:</strong> <input type="number" style="width: 20%;font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px; " class="text-input "><br>
-                        <strong>Khoa:</strong> <input type="text" style="width: 40%; border: 1px; font-family: 'Times New Roman'; ">
-                        <strong>Buồng:</strong> <input type="text " style="width: 15%;font-family: 'Times New Roman'; border: 1px;  ">
-                        <strong>Giường:</strong> <input type="text " style="width: 20%;font-family: 'Times New Roman'; border: 1px;  "><br>
-                        <strong>Chẩn đoán:</strong> <input type="text " style="width: 85%;font-family: 'Times New Roman'; border: 1px;  ">
+                <td colspan="4" style="width: 100%; padding: 0px; border: none;">
+                    <div class="checkbox-section" style="width: 100%;">
+                        <strong>Họ và tên:</strong> <input type="text" class="text-input name-input" style="width: 45%; font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px; border-bottom: 1px dotted #000000;">
+                        <button class="mic-btn" data-target="name-input">🎤</button>
+                        <strong>Tuổi:</strong> <input type="number" class="text-input age-input" style="width: 5%; font-family: 'Times New Roman'; border: 1px; border-bottom: 1px dotted #000000;">
+                        <button class="mic-btn" data-target="age-input">🎤</button>
+                        <span class="checkbox-section"><strong>Giới tính:</strong> Nam <input type="checkbox" class="checkbox"> Nữ <input type="checkbox" class="checkbox"></span><br>
+                        <strong>Địa chỉ:</strong> <input type="text" class="text-input address-input" style="text-align: left; width: 50%; font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px; border-bottom: 1px dotted #000000;">
+                        <button class="mic-btn" data-target="address-input">🎤</button>
+                        <strong>Số thẻ BHYT:</strong> <input type="number" class="text-input bhyt-input" style="width: 20%; font-family: 'Times New Roman'; box-sizing: border-box; padding: 2px; border: 1px; border-bottom: 1px dotted #000000;">
+                        <button class="mic-btn" data-target="bhyt-input">🎤</button><br>
+                        <strong>Khoa:</strong> <input type="text" class="text-input department-input" style="text-align: left; width: 30%; border: 1px; border-bottom: 1px dotted #000000; font-family: 'Times New Roman';">
+                        <button class="mic-btn" data-target="department-input">🎤</button>
+                        <strong>Buồng:</strong> <input type="text" class="text-input room-input" style="width: 15%; font-family: 'Times New Roman'; border: 1px; border-bottom: 1px dotted #000000;">
+                        <button class="mic-btn" data-target="room-input">🎤</button>
+                        <strong>Giường:</strong> <input type="text" class="text-input bed-input" style="width: 15%; font-family: 'Times New Roman'; border: 1px; border-bottom: 1px dotted #000000;">
+                        <button class="mic-btn" data-target="bed-input">🎤</button><br>
+                        <strong>Chẩn đoán:</strong> <input type="text" class="text-input diagnosis-input" style="text-align: left; width: 80%; font-family: 'Times New Roman'; border: 1px; border-bottom: 1px dotted #000000;">
+                        <button class="mic-btn" data-target="diagnosis-input">🎤</button>
                     </div>
                 </td>
             </tr>
-
         </table>
-        <table style="width: 100%; border-collapse: collapse; ">
-
+        <table style="width: 100%; border-collapse: collapse;">
             <tr>
-                <th class="col-index" style=" padding: 8px;">XÉT NGHIỆM</th>
+                <th class="col-index" style="padding: 8px;">XÉT NGHIỆM</th>
                 <th class="col-result">KẾT QUẢ</th>
                 <th class="col-index">XÉT NGHIỆM</th>
                 <th class="col-result">KẾT QUẢ</th>
             </tr>
             <tr>
                 <td class="col-index"><input type="checkbox" class="checkbox"> Đường/ht GOD-POD (3,6-6,4)</td>
-                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; ">mmol/l</td>
+                <td class="col-result"><input type="text" class="text-input glucose" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;"> mmol/l
+                    <button class="mic-btn" data-target="glucose">🎤</button></td>
                 <td class="col-index">Số lượng bạch cầu (4-10 x 10⁹/l)</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input wbc-count" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="wbc-count">🎤</button></td>
             </tr>
             <tr>
                 <td class="col-index">Huyết sắc tố: <br> Nam (140-160 g/l) <br> Nữ (125-145 g/l)</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input hemoglobin" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="hemoglobin">🎤</button></td>
                 <td class="col-index">Thành phần bạch cầu (%)</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input wbc-diff" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="wbc-diff">🎤</button></td>
             </tr>
             <tr>
                 <td class="col-index">Hematocrit: <br> Nam (0.38-0.50 l/l) <br> Nữ (0.35-0.47 l/l)</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input hematocrit" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="hematocrit">🎤</button></td>
                 <td class="col-index">- Đoạn trung tính</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input neutrophils" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="neutrophils">🎤</button></td>
             </tr>
             <tr>
                 <td class="col-index">MCV</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input mcv" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="mcv">🎤</button></td>
                 <td class="col-index">- Đoạn ưa axit</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input eosinophils" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="eosinophils">🎤</button></td>
             </tr>
             <tr>
                 <td class="col-index">MCH</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input mch" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="mch">🎤</button></td>
                 <td class="col-index">- Đoạn ưa bazơ</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input basophils" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="basophils">🎤</button></td>
             </tr>
             <tr>
                 <td class="col-index">MCHC</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input mchc" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="mchc">🎤</button></td>
                 <td class="col-index">- Mono</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input monocytes" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="monocytes">🎤</button></td>
             </tr>
             <tr>
                 <td class="col-index">Hồng cầu có nhân (0 x 10⁹/l)</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input nrbc" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="nrbc">🎤</button></td>
                 <td class="col-index">- Lympho</td>
-                <td class="col-result"><input type="text" class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input lymphocytes" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="lymphocytes">🎤</button></td>
             </tr>
             <tr>
                 <td class="col-index">Hồng cầu lưới (0.1-0.5%)</td>
-                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input reticulocytes" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="reticulocytes">🎤</button></td>
                 <td class="col-index">- Tế bào bất thường</td>
-                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input abnormal-cells" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="abnormal-cells">🎤</button></td>
             </tr>
             <tr>
                 <td class="col-index">Số lượng tiểu cầu (150-400 x 10⁹/l)</td>
-                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+                <td class="col-result"><input type="text" class="text-input platelets" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="platelets">🎤</button></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -239,74 +143,108 @@
                 <td></td>
                 <td></td>
                 <td class="col-index">Tốc độ máu lắng: <br> Giờ 1 (
-                    <15 mm) <br>
-                        <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
+                    <15 mm)</td>
+                        <td class="col-result"><input type="text" class="text-input esr-hour1" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                            <button class="mic-btn" data-target="esr-hour1">🎤</button></td>
             </tr>
             <tr>
                 <td class="col-index">KSV sốt rét:</td>
-                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
-                <td>Giờ 2 (
+                <td class="col-result"><input type="text" class="text-input malaria" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="malaria">🎤</button></td>
+                <td class="col-index">Giờ 2 (
                     <20 mm)</td>
-                </td>
-                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 50%; "></td>
-            </tr>
-            <!-- Section 2: Coagulation -->
-
-        </table>
-
-        <table style="width: 100%; border-collapse: collapse; ">
-            <tr>
-                <th colspan="4" style=" font-size: 16px; border-spacing: 0;border-collapse: collapse; padding: 8px;" class="header">2. Đông máu</th>
-            </tr>
-            <tr>
-                <td>Thời gian máu chảy:</td>
-                <td class="data-table"><input type="text " class="text-input " style="width: 40px;border: 1px; "> Phút</td>
-                <td>Thời gian máu đông:</td>
-                <td class="data-table"><input type="text " class="text-input " style="width: 40px; border: 1px; "> Phút</td>
+                        <td class="col-result"><input type="text" class="text-input esr-hour2" style="border: 1px; width: 50%; border-bottom: 1px dotted #000000;">
+                            <button class="mic-btn" data-target="esr-hour2">🎤</button></td>
             </tr>
         </table>
-        <!-- Section 3: Blood Group -->
-        <table style="width: 100%; border-collapse: collapse; ">
+        <table style="width: 100%; border-collapse: collapse;">
             <tr>
-                <th colspan="4" style=" font-size: 16px; border-spacing: 0;border-collapse: collapse; padding: 8px;" class="header">3. Nhóm máu</th>
+                <th colspan="4" style="font-size: 16px; border-spacing: 0; border-collapse: collapse; padding: 8px;" class="header">2. Đông máu</th>
             </tr>
-
             <tr>
-                <td class="col-index" style="text-align: center">Hệ ABO:</td>
-                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 40px; ">Phút</td>
-                <td class="col-index" style="text-align: center">Hệ Rh:</td>
-                <td class="col-result"><input type="text " class="text-input " style="border: 1px; width: 40px; ">Phút</td>
+                <td class="col-index">Thời gian máu chảy:</td>
+                <td class="col-result"><input type="text" class="text-input bleeding-time" style="width: 40px; border: 1px; border-bottom: 1px dotted #000000;"> Phút
+                    <button class="mic-btn" data-target="bleeding-time">🎤</button></td>
+                <td class="col-index">Thời gian máu đông:</td>
+                <td class="col-result"><input type="text" class="text-input clotting-time" style="width: 40px; border: 1px; border-bottom: 1px dotted #000000;"> Phút
+                    <button class="mic-btn" data-target="clotting-time">🎤</button></td>
             </tr>
         </table>
-
-        <table style="width: 100%; padding-top: 0px; border-spacing: 0; ">
-
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th colspan="4" style="font-size: 16px; border-spacing: 0; border-collapse: collapse; padding: 8px;" class="header">3. Nhóm máu</th>
+            </tr>
+            <tr>
+                <td class="col-index" style="text-align: center;">Hệ ABO:</td>
+                <td class="col-result"><input type="text" class="text-input abo-group" style="border: 1px; width: 40px; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="abo-group">🎤</button></td>
+                <td class="col-index" style="text-align: center;">Hệ Rh:</td>
+                <td class="col-result"><input type="text" class="text-input rh-group" style="border: 1px; width: 40px; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="rh-group">🎤</button></td>
+            </tr>
+        </table>
+        <table style="width: 100%; padding-top: 0px; border-spacing: 0;">
             <tr>
                 <th style="border: none;">
-                    <input type="text " class="text-input " style="width: 15px; border: 1px; align: center; ">giờ<input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">phút, ngày <input type="text " class="text-input "
-                        style="width: 20px; border: 1px;  align: center;"> tháng <input type="text " class="text-input " style="width: 20px; border: 1px;align: center;  "> năm <input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">
+                    <input type="text" class="text-input time1-hour" style="width: 15px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">giờ
+                    <button class="mic-btn" data-target="time1-hour">🎤</button>
+                    <input type="text" class="text-input time1-minute" style="width: 20px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">phút, ngày
+                    <button class="mic-btn" data-target="time1-minute">🎤</button>
+                    <input type="text" class="text-input time1-day" style="width: 20px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">tháng
+                    <button class="mic-btn" data-target="time1-day">🎤</button>
+                    <input type="text" class="text-input time1-month" style="width: 20px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">năm
+                    <button class="mic-btn" data-target="time1-month">🎤</button>
+                    <input type="text" class="text-input time1-year" style="width: 40px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="time1-year">🎤</button>
                 </th>
                 <th style="border: none;">
-                    <input type="text " class="text-input " style="width: 15px; border: 1px; align: center; ">giờ<input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">phút, ngày <input type="text " class="text-input "
-                        style="width: 20px; border: 1px;  align: center;"> tháng <input type="text " class="text-input " style="width: 20px; border: 1px;align: center;  "> năm <input type="text " class="text-input " style="width: 20px; border: 1px; align: center; ">
+                    <input type="text" class="text-input time2-hour" style="width: 15px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">giờ
+                    <button class="mic-btn" data-target="time2-hour">🎤</button>
+                    <input type="text" class="text-input time2-minute" style="width: 20px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">phút, ngày
+                    <button class="mic-btn" data-target="time2-minute">🎤</button>
+                    <input type="text" class="text-input time2-day" style="width: 20px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">tháng
+                    <button class="mic-btn" data-target="time2-day">🎤</button>
+                    <input type="text" class="text-input time2-month" style="width: 20px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">năm
+                    <button class="mic-btn" data-target="time2-month">🎤</button>
+                    <input type="text" class="text-input time2-year" style="width: 40px; border: 1px; text-align: center; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="time2-year">🎤</button>
                 </th>
             </tr>
         </table>
-        <table class="signature " style="width: 100%; padding-top: 15px; border-spacing: 0; ">
+        <table class="signature" style="width: 100%; padding-top: 15px; border-spacing: 0;">
             <tr>
-                <th style="border: none; align=center;padding-top: 15px; ">
-                    <strong>NGƯỜI LẤY MẪU</strong><br><br><br><br><br><br><br><br> Họ tên: <input type="text " class="text-input " style="border: 1px; ">
+                <th style="border: none; text-align: center; padding-top: 15px;">
+                    <strong>NGƯỜI LẤY MẪU</strong><br><br><br><br><br><br><br><br>Họ tên:
+                    <input type="text" class="text-input sampler-name" style="border: 1px; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="sampler-name">🎤</button>
                 </th>
-                <th style="border: none; align=center; padding-top: 15px;">
-                    <strong>TRƯỞNG KHOA XÉT NGHIỆM</strong><br><br><br><br><br><br><br><br> Họ tên: <input type="text " class="text-input " style="border: 1px;">
+                <th style="border: none; text-align: center; padding-top: 15px;">
+                    <strong>TRƯỞNG KHOA XÉT NGHIỆM</strong><br><br><br><br><br><br><br><br>Họ tên:
+                    <input type="text" class="text-input lab-head-name" style="border: 1px; border-bottom: 1px dotted #000000;">
+                    <button class="mic-btn" data-target="lab-head-name">🎤</button>
                 </th>
             </tr>
         </table>
-        <p style="text-align: left; font-size: 13px; ">
+        <p style="text-align: left; font-size: 13px;">
             <strong style="text-align: left;">Hướng dẫn</strong> <br>Quy ước quốc tế: Số lượng hồng cầu, bạch cầu... được tính trong đơn vị lít (l).<br>- Vì: 1.000.000.000 = 10<sup>9</sup>= G (Giga); 1.000.000.000.000 = 10<sup>12</sup>= T (Tera).<br>-
-            Số lượng hồng cầu trước đây tínhtrong 1ml. Ví dụ là 4 triệu: Nay quy ra trong 1 lít là 4 triệu triệu/l hay 4x10<sup>12</sup>/l hay4T/l.
+            Số lượng hồng cầu trước đây tính trong 1ml. Ví dụ là 4 triệu: Nay quy ra trong 1 lít là 4 triệu triệu/l hay 4x10<sup>12</sup>/l hay 4T/l.
         </p>
     </section>
+    <button id="scan-camera">Quét QR từ Camera</button>
+    <button id="stop-camera">Tắt Camera</button>
+    <div id="qr-reader-camera" style="width: 300px;"></div>
+    <p id="qr-status">Nhấn nút để bắt đầu quét QR.</p>
+    <p id="qr-status">Chọn ảnh chứa mã QR.</p>
+
+    <input class="button" type="file" id="qr-file-input" accept="image/*">
+    <button id="scan-file">Quét từ ảnh</button>
+    <div id="qr-reader-temp" style="display: none;"></div>
+    <p id="qr-raw-result" style="color: rgb(2, 124, 255); font-weight: bold;"></p>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+
+    <script src="./assets/js/script.js"></script>
+    <!-- Liên kết file JavaScript -->
 </body>
 
 </html>
